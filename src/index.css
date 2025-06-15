@@ -1,0 +1,84 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 218 23% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 218 23% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 218 23% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 19% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 19% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217 19% 14%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 19% 14%;
+    --input: 217 19% 14%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 218 23% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 19% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 19% 14%;
+    --sidebar-ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-game-dark-bg text-foreground font-sans;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .quiz-button {
+    @apply relative overflow-hidden transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .quiz-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] skew-x-[-45deg] transition-transform duration-700;
+  }
+  
+  .quiz-button:hover::before {
+    @apply translate-x-[100%];
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+}
